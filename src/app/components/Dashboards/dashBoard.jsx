@@ -1,4 +1,3 @@
-// DashBoard.js
 "use client";
 import React, { useState } from "react";
 import { DndProvider } from "react-dnd";
@@ -73,11 +72,6 @@ const DashBoard = () => {
     },
   ]);
 
-  /**
-   * Select the card from sorce and drop it in destination
-   * @param {*} source
-   * @param {*} destination
-   */
   const moveCard = (source, destination) => {
     if (
       !destination ||
@@ -136,9 +130,9 @@ const DashBoard = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="flex flex-col">
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <div className="flex p-5">
+        <div className="flex overflow-x-auto p-5 space-x-4 sm:space-x-6">
           {sampleData.map((data) => (
             <WorkSpaces key={data.uniqueId} data={data} moveCard={moveCard} />
           ))}
