@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDrop } from "react-dnd";
 import TaskCard from "./taskCard";
 import EditTaskCard from "./modals/editCard";
@@ -13,6 +13,10 @@ const WorkSpaces = ({ data, moveCard }) => {
   const [editModal, setEditModal] = useState(false);
   const [viewModal, setViewModal] = useState(false);
 
+  useEffect(() => {
+    setDataList(data);
+  }, [data]);
+
   const [, drop] = useDrop({
     accept: "CARD",
     drop: (item, monitor) => {
@@ -22,7 +26,7 @@ const WorkSpaces = ({ data, moveCard }) => {
       };
       const destination = {
         droppableId: data.uniqueId,
-        index: item.index,
+        index: monitor.getItem().index,
       };
       moveCard(source, destination);
     },
