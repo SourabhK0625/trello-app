@@ -1,4 +1,6 @@
+"use client";
 import React, { useState } from "react";
+import { signIn } from "next-auth/react";
 
 const Login = () => {
   const [formData, setFormData] = useState([
@@ -7,6 +9,7 @@ const Login = () => {
       password: "",
     },
   ]);
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -74,7 +77,8 @@ const Login = () => {
           </p>
           <div className="flex justify-center mt-3">
             <button
-              type="submit"
+              type="button"
+              onClick={() => signIn("google")}
               className="flex w-50 rounded-md justify-center bg-blue-500 px-3 py-1.5 text-sm leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Login with Google

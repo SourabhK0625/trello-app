@@ -1,5 +1,7 @@
 "use client";
 import { NotepadText } from "lucide-react";
+import { useSession } from "next-auth/react";
+
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
 

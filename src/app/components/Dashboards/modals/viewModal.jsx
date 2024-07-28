@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
-import { Button } from "@/ShadcnComponents/ui/button";
+import { Button } from "../../../../ShadcnComponents/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/ShadcnComponents/ui/dialog";
+} from "../../../../ShadcnComponents/ui/dialog";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cn } from "../../../../lib/utils";
 
 const ViewModal = ({ open, onOpenChange, data }) => {
   const dialogVariants = cva(

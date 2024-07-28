@@ -1,8 +1,6 @@
-import DashBoard from "@/app/components/Dashboards/dashBoard";
-import React from "react";
+"use client";
+import Dashboard from "../../components/Dashboards/dashBoard";
 
-const Page = () => {
-  return <DashBoard />;
-};
-
-export default Page;
+export default function DashBoard() {
+  return <Dashboard />;
+}
